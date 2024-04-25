@@ -19,3 +19,15 @@ function checkboxSwitch(checkBox) {
         }
     }
 }
+
+/** Function that open/close task description */
+function viewTask(button) {
+    let description = document.querySelector(".task-description");
+    if (button.innerText == "View Task Description") {
+        description.style.display = "block";
+        button.innerText = "Close Task Description";
+    } else {
+        button.innerText = "View Task Description";
+        description.style.display = "none";
+    }
+}
