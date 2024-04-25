@@ -7,7 +7,7 @@ body {
   margin:auto;
   margin-top:2vh;
 
-  min-height:80vw;
+  min-height:50vw;
   max-height:fit-content;
   width:90%;
 
@@ -68,19 +68,19 @@ div#headerDate {
 
 /* Create new task css */
 #create-task-container {
-  width:80%;
-  height:4vh;
-  margin:auto;
-  margin-top:2vw;
-
-  background-color: rgb(256,220,212);
-  border-radius:10px;
-  padding-top:4vh;
-  padding-bottom:4vh;
-
-  display:grid;
-  grid-gap:4vh;
-  grid-template-columns: 1fr 1fr 1fr
+  width: 80%;
+  min-height: 10vw;
+  max-height: fit-content;
+  margin: auto;
+  margin-top: 2vw;
+  background-color: rgb(256, 220, 212);
+  border-radius: 10px;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .create-title {
@@ -92,10 +92,11 @@ div#headerDate {
   font-size:3vh;
 }
 
-#new-description {
+.new-text {
   height:60%;
   margin-top:auto;
   margin-bottom:auto;
+  margin:auto;
 }
 
 #create-button {
@@ -266,6 +267,10 @@ label {
     .arrow {
       font-size:4em;
       transform: scaleX(1.5);
+    }
+
+    .new-text {
+      width:90%!important;
     }
   }
   
