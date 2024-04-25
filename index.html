@@ -3,6 +3,7 @@
     <head>
       <link rel="stylesheet" href="task.css">
       <meta name="viewport" content="width=device-width">
+      <script src="taskFunctionality.js"></script>
     </head>
     <body>
       
@@ -27,32 +28,31 @@
             <div class="task">
         
               <div class="container">
-              <div class="title-container">
-              <!-- TASK TITLE -->
+                <div class="title-container">
+                  <!-- TASK TITLE -->
 
-              <span class="task-title">Task Title Example</span> 
-              <br>
-              <label>
-                  <input type="checkbox" class="task-checkbox-wip"/>
-                  <span class="arrow">&rarr;</span>
-                  <input type="checkbox" class="task-checkbox-done"/>
+                  <span class="task-title">Task Title Example</span> 
+                  <br>
+                  <label>
+                      <input type="checkbox" id="startTask" class="task-checkbox-wip" onclick="checkboxSwitch(this)"/>
+                      <span class="arrow">&rarr;</span>
+                      <input type="checkbox" id="finishTask" class="task-checkbox-done" onclick="checkboxSwitch(this)"/>
+                        <span class="go-left checkTitle">START</span>
+        
+                        <span class="go-right checkTitle">DONE</span>
+                  </label>
+                </div>
 
-                    <span class="go-left checkTitle">START</span>
-    
-                    <span class="go-right checkTitle">DONE</span>
-                  </div>
-              </label>
+                <!-- OPEN DESCRIPTION BUTTON -->
+                <button type="click" class="task-open">
+                  View Task Description
+                </button>
 
-              <!-- OPEN DESCRIPTION BUTTON -->
-              <button type="click" class="task-open">
-                View Task Description
-              </button>
-
-              <!-- HIDDEN CONTENT (SHOW THIS ON BUTTON CLICK)-->
-              <p class="task-description">
-              Hidden Content
-              </p> 
-            </div>
+                <!-- HIDDEN CONTENT (SHOW THIS ON BUTTON CLICK)-->
+                <p class="task-description">
+                Hidden Content
+                </p> 
+              </div>
             </div>
             
 
@@ -61,10 +61,9 @@
 
           <!-- END TASK CONTAINER -->
 
-
+        </div>
           <img src="logo.png" style="display: block; margin:auto; width:50%;">
 
 
-          
     </body>
 </html>
