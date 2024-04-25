@@ -65,6 +65,47 @@ div#headerDate {
 }
 
 
+
+/* Create new task css */
+#create-task-container {
+  width:80%;
+  height:4vh;
+  margin:auto;
+  margin-top:2vw;
+
+  background-color: rgb(256,220,212);
+  border-radius:10px;
+  padding-top:4vh;
+  padding-bottom:4vh;
+
+  display:grid;
+  grid-gap:4vh;
+  grid-template-columns: 1fr 1fr 1fr
+}
+
+.create-title {
+  margin-top:auto;
+  margin-bottom:auto;
+  margin-left:auto;
+  margin-right:auto;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:3vh;
+}
+
+#new-description {
+  height:60%;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+#create-button {
+  margin-top:auto;
+  margin-bottom:auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
 /* TASK ITEM CSS */
 
 .task {
@@ -88,6 +129,7 @@ div#headerDate {
 .custom-radio:checked {
     background-color: green;
 }
+
 
 
 div.task {
@@ -120,7 +162,7 @@ div.task {
 .task-description {
   flex-basis:100%;
   display:none;
-  font-size:
+  font-size:3vh;
 }
 
 .task-description:target {
