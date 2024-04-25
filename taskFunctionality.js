@@ -17,8 +17,6 @@ function checkboxSwitch(checkBox) {
         var finishCheck = document.getElementById("finishTask");
         var checkStatus = finishCheck.checked;
 
-        console.log("hello");
-
         if(checkBox.checked && checkStatus) {
             finishCheck.checked = false;
         }
