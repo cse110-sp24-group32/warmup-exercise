@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="task.css">
+      <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+      
+        <div id="task-list">
+          <header id="taskHeader">
+
+            <div id="headerLogo">
+            <img src="radio-icon.png" id="radio-icon"><h1 style="display:inline; padding-left: 0.5vw;">Task List</h1>
+           </div>
+
+           <div id="headerDate">
+            4/24/2024
+           </div>
+
+          </header>
+
+
+          <!-- TASK CONTAINER: append new tasks here -->
+          <div id="task-container">
+            
+            <!-- BEGIN EXAMPLE TASK -- RECREATE THIS WITH JS FOR EACH JSON TASK OBJECT -->
+            <div class="task">
+        
+              <div class="container">
+              <div class="title-container">
+              <!-- TASK TITLE -->
+
+              <span class="task-title">Task Title Example</span> 
+              <br>
+              <label>
+                  <input type="checkbox" class="task-checkbox-wip"/>
+                  <span class="arrow">&rarr;</span>
+                  <input type="checkbox" class="task-checkbox-done"/>
+
+                    <span class="go-left checkTitle">START</span>
+    
+                    <span class="go-right checkTitle">DONE</span>
+                  </div>
+              </label>
+
+              <!-- OPEN DESCRIPTION BUTTON -->
+              <button type="click" class="task-open">
+                View Task Description
+              </button>
+
+              <!-- HIDDEN CONTENT (SHOW THIS ON BUTTON CLICK)-->
+              <p class="task-description">
+              Hidden Content
+              </p> 
+            </div>
+            </div>
+            
+
+            <!-- END EXAMPLE TASK -->
+          </div>
+
+          <!-- END TASK CONTAINER -->
+
+
+          <img src="logo.png" style="display: block; margin:auto; width:50%;">
+
+
+          
+    </body>
+</html>
