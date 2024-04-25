@@ -1,3 +1,15 @@
+/** Replaces date with today's date */
+window.onload = function() {
+    //today
+    var today = new Date();
+
+    //format the date as MM/DD/YYYY
+    var formattedDate = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+
+    //update the content of the div with id headerDate
+    document.getElementById('headerDate').innerText = formattedDate;
+};
+
 function checkboxSwitch(checkBox) {
 
     // initially checks if the calling element is the start checkbox
