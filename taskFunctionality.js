@@ -142,29 +142,23 @@ function readTextFile(file) {
             data = data.tasks;
             
             const task_container = document.getElementById('task-container');
-            task_container.innerHTML = ``;
+            //task_container.innerHTML = ``;
 
             for (let i=0; i < data.length; i++) {
-                const task = document.createElement('task-component');
-                task.setAttribute('title', data[i].title);
-                task.setAttribute('content', data[i].content);
-                task.setAttribute('start_id', "startTask" + i);
-                task.setAttribute('finish_id', "finishTask" + i);
-                task.setAttribute('description_id', "task-description" + i);
+               
+                let tasks = JSON.parse(localStorage.getItem("tasks"));
+                let taskdata = {};
+                taskdata["title"] = data[i].title;
+                taskdata["content"] = data[i].content;
+                taskdata["started"] = data[i].started;
+                taskdata["checkbox"] = data[i].checkbox;
+                let id = Date.now().toString() + i;
+                tasks[id] = taskdata;
+                localStorage.setItem("tasks",JSON.stringify(tasks));
 
-                task_container.appendChild(task);
-
-                // hide description on default
-                let description = document.querySelector("." + "task-description" + i);
-                description.style.display = "none";
-
-                if (data[i].started) {
-                    let startCheck = document.getElementById("startTask" + i);
-                    startCheck.checked = true;
-                } else if (data[i].checkbox) {
-                    let finishCheck = document.getElementById("finishTask" + i);
-                    finishCheck.checked = true;
-                }
+                let el = document.createElement("task-elem");
+                el.setAttribute("id",id);
+                document.getElementById('task-container').append(el);
             }
         }
     }
