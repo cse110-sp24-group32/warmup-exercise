@@ -14,7 +14,7 @@
             <img src="radio-icon.png" id="radio-icon"><h1 style="display:inline; padding-left: 0.5vw;">Task List</h1>
            </div>
 
-           <input id="read_json" type="button" value="Read from JSON" onclick="readTextFile('tasks.json');" />
+           <input id="read_json" type="button" value="Populate With Examples" onclick="readTextFile('tasks.json');" />
 
            <div id="headerDate">
             4/24/2024
@@ -28,10 +28,11 @@
             <span class="create-title">Task Description + Title</span>
             <input type="text" id="create-title" class="new-text" placeholder="title"> </input>
             <input type="text" id="create-desc" class="new-text" placeholder="description"> </input>
+            <input type="date" id="create-deadline" class="new-text"> </input>
             <button type="click" id="create-button" onclick="addTask(this)">Create Task</button>
           </div>
           <div id="task-container">
-
+            
           </div>
 
           <!-- END TASK CONTAINER -->
