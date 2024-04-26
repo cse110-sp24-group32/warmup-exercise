@@ -1,7 +1,3 @@
-/* hide page: will be unhidden by javascript */
-/* otherwise notes won't be populated until a moment after the page loads */
-html {visibility:hidden; }
-
 body {
   margin:0;
 }
