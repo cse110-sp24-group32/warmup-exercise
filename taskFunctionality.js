@@ -31,6 +31,7 @@ function addTaskElement(id) {
 function addTask(){
     const title = document.getElementById('create-title').value;
     const desc = document.getElementById('create-desc').value;
+    const deadline = document.getElementById('create-deadline').value;
     //console.log("adding " + title + " " + desc)
     let tasks = JSON.parse(localStorage.getItem("tasks"));
     let data = {};
@@ -38,6 +39,7 @@ function addTask(){
     data["content"] = desc;
     data["started"] = false;
     data["checkbox"] = false;
+    data["deadline"] = deadline ? deadline : "No deadline";
     let id = Date.now().toString();
     tasks[id] = data;
     localStorage.setItem("tasks",JSON.stringify(tasks));
@@ -55,27 +57,28 @@ class TaskElement extends HTMLElement {
         //console.log("at " + id);
         this.innerHTML = `
         <div class="task">
-    
-          <div class="container">
-            <div class="title-container">
-              <!-- TASK TITLE -->
+            
+                <div class="container">
+                    <span class="deadline">Deadline: ${data["deadline"]} </span>
+                    <div class="title-container">
+                    <!-- TASK TITLE -->
 
-              <span class="task-title">${data["title"]}</span> 
-              <br>
-              <label>
-                  <input type="checkbox" class="task-checkbox-wip" onclick="checkboxSwitch(this)"/>
-                  <span class="arrow">&rarr;</span>
-                  <input type="checkbox" class="task-checkbox-done" onclick="checkboxSwitch(this)"/>
-                    <span class="go-left checkTitle">START</span>
-    
-                    <span class="go-right checkTitle">DONE</span>
-              </label>
-            </div>
+                    <span class="task-title">${data["title"]}</span> 
+                    <br>
+                    <label>
+                        <input type="checkbox" class="task-checkbox-wip" onclick="checkboxSwitch(this)"/>
+                        <span class="arrow">&rarr;</span>
+                        <input type="checkbox" class="task-checkbox-done" onclick="checkboxSwitch(this)"/>
+                            <span class="go-left checkTitle">START</span>
+                                
+                            <span class="go-right checkTitle">DONE</span>
+                    </label>
+                    </div>
 
-            <!-- OPEN DESCRIPTION BUTTON -->
-            <button type="click" class="task-open" onclick="viewTask(this)">
-                View Task Description
-            </button>
+                    <!-- OPEN DESCRIPTION BUTTON -->
+                    <button type="click" class="task-open" onclick="viewTask(this)">
+                        View Task Description
+                    </button>
 
             <!-- HIDDEN CONTENT (SHOW THIS ON BUTTON CLICK)-->
             <p class="task-description">
@@ -152,6 +155,7 @@ function readTextFile(file) {
                 taskdata["content"] = data[i].content;
                 taskdata["started"] = data[i].started;
                 taskdata["checkbox"] = data[i].checkbox;
+                taskdata["deadline"] = data[i].deadline;
                 let id = Date.now().toString() + i;
                 tasks[id] = taskdata;
                 localStorage.setItem("tasks",JSON.stringify(tasks));

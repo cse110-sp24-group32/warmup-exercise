@@ -24,7 +24,7 @@ class Task extends HTMLElement {
                 <span class="arrow">&rarr;</span>
                 <input type="checkbox" id="${finish_id}" class="task-checkbox-done" onclick="checkboxSwitch(this, '${start_id}', '${finish_id}')"/>
                   <span class="go-left checkTitle">START</span>
-
+                      Bye Bye
                   <span class="go-right checkTitle">DONE</span>
             </label>
           </div>
