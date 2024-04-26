@@ -47,7 +47,6 @@ function readTextFile(file) {
     let json_input = new XMLHttpRequest();
     json_input.overrideMimeType("application/json");
     json_input.open("GET", file, true);
-    json_input.setRequestHeader('Access-Control-Allow-Origin', '*');
     json_input.onreadystatechange = function() {
         if (json_input.readyState === 4 && json_input.status == "200") {
             var data = JSON.parse(json_input.responseText);
@@ -65,7 +64,6 @@ function readTextFile(file) {
                 task.setAttribute('description_id', "task-description" + i);
 
                 task_container.appendChild(task);
-                console.log(data[i]);
 
                 // hide description on default
                 let description = document.querySelector("." + "task-description" + i);
