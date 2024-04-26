@@ -24,45 +24,12 @@
           <!-- TASK CONTAINER: append new tasks here -->
           <div id="create-task-container">
             <span class="create-title">Task Description + Title</span>
-            <input type="text" class="new-text" placeholder="title"> </input>
-            <input type="text" class="new-text" placeholder="description"> </input>
-            <button type="click" id="create-button">Create Task</button>
+            <input type="text" id="create-title" class="new-text" placeholder="title"> </input>
+            <input type="text" id="create-desc" class="new-text" placeholder="description"> </input>
+            <button type="click" id="create-button" onclick="addTask(this)">Create Task</button>
           </div>
           <div id="task-container">
-            
-            <!-- BEGIN EXAMPLE TASK -- RECREATE THIS WITH JS FOR EACH JSON TASK OBJECT -->
-            <div class="task">
-        
-              <div class="container">
-                <div class="title-container">
-                  <!-- TASK TITLE -->
 
-                  <span class="task-title">Task Title Example</span> 
-                  <br>
-                  <label>
-                      <input type="checkbox" id="startTask" class="task-checkbox-wip" onclick="checkboxSwitch(this)"/>
-                      <span class="arrow">&rarr;</span>
-                      <input type="checkbox" id="finishTask" class="task-checkbox-done" onclick="checkboxSwitch(this)"/>
-                        <span class="go-left checkTitle">START</span>
-        
-                        <span class="go-right checkTitle">DONE</span>
-                  </label>
-                </div>
-
-                <!-- OPEN DESCRIPTION BUTTON -->
-                <button type="click" class="task-open" onclick="viewTask(this)">
-                  View Task Description
-                </button>
-
-                <!-- HIDDEN CONTENT (SHOW THIS ON BUTTON CLICK)-->
-                <p class="task-description">
-                Hidden Content
-                </p> 
-              </div>
-            </div>
-            
-
-            <!-- END EXAMPLE TASK -->
           </div>
 
           <!-- END TASK CONTAINER -->
