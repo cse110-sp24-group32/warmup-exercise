@@ -73,7 +73,7 @@ div#headerDate {
 /* Create new task css */
 #create-task-container {
   width: 80%;
-  min-height: 10vw;
+  min-height: 2vw;
   max-height: fit-content;
   margin: auto;
   margin-top: 2vw;

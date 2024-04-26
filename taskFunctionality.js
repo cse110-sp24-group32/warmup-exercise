@@ -168,3 +168,9 @@ function readTextFile(file) {
     }
     json_input.send(null);
 }
+
+function clearTasks() {
+    localStorage.setItem("tasks","{}");
+    const task_container = document.getElementById('task-container');
+    task_container.innerHTML = '';
+}
