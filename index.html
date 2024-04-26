@@ -4,19 +4,22 @@
       <link rel="stylesheet" href="task.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="taskFunctionality.js"></script>
+      <script src="task.js" type="text/javascript" defer></script>
     </head>
     <body>
       
         <div id="task-list">
           <header id="taskHeader">
 
-            <div id="headerLogo">
+          <div id="headerLogo">
             <img src="radio-icon.png" id="radio-icon"><h1 style="display:inline; padding-left: 0.5vw;">Task List</h1>
-           </div>
+          </div>
 
-           <div id="headerDate">
+          <input id="read_json" type="button" value="Read from JSON" onclick="readTextFile('tasks.json');" />
+
+          <div id="headerDate">
             4/24/2024
-           </div>
+          </div>
 
           </header>
 
@@ -28,43 +31,9 @@
             <input type="text" class="new-text" placeholder="description"> </input>
             <button type="click" id="create-button">Create Task</button>
           </div>
-          <div id="task-container">
-            
-            <!-- BEGIN EXAMPLE TASK -- RECREATE THIS WITH JS FOR EACH JSON TASK OBJECT -->
-            <div class="task">
-        
-              <div class="container">
-                <div class="title-container">
-                  <!-- TASK TITLE -->
 
-                  <span class="task-title">Task Title Example</span> 
-                  <br>
-                  <label>
-                      <input type="checkbox" id="startTask" class="task-checkbox-wip" onclick="checkboxSwitch(this)"/>
-                      <span class="arrow">&rarr;</span>
-                      <input type="checkbox" id="finishTask" class="task-checkbox-done" onclick="checkboxSwitch(this)"/>
-                        <span class="go-left checkTitle">START</span>
-        
-                        <span class="go-right checkTitle">DONE</span>
-                  </label>
-                </div>
-
-                <!-- OPEN DESCRIPTION BUTTON -->
-                <button type="click" class="task-open" onclick="viewTask(this)">
-                  View Task Description
-                </button>
-
-                <!-- HIDDEN CONTENT (SHOW THIS ON BUTTON CLICK)-->
-                <p class="task-description">
-                Hidden Content
-                </p> 
-              </div>
-            </div>
-            
-
-            <!-- END EXAMPLE TASK -->
-          </div>
-
+          <div id="task-container"></div>
+          
           <!-- END TASK CONTAINER -->
 
         </div>
